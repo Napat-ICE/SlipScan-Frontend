@@ -273,6 +273,24 @@ const Upload = () => {
                                                         ))}
                                                     </div>
                                                 )}
+
+                                                {/* Raw OCR Data Toggle */}
+                                                {result.data?.raw_ocr && (
+                                                    <div className="md:col-span-2 mt-3">
+                                                        <button
+                                                            onClick={() => {
+                                                                const el = document.getElementById(`ocr-raw-${idx}`);
+                                                                if (el) el.classList.toggle('hidden');
+                                                            }}
+                                                            className="text-xs text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium flex items-center gap-1 transition-colors"
+                                                        >
+                                                            <FileType className="w-3 h-3" /> ดูข้อมูล OCR ดิบ
+                                                        </button>
+                                                        <div id={`ocr-raw-${idx}`} className="hidden mt-2 p-3 bg-gray-900 dark:bg-black/60 text-green-400 text-xs font-mono rounded-lg max-h-64 overflow-auto whitespace-pre-wrap border border-gray-700">
+                                                            {typeof result.data.raw_ocr === 'string' ? result.data.raw_ocr : JSON.stringify(result.data.raw_ocr, null, 2)}
+                                                        </div>
+                                                    </div>
+                                                )}
                                             </div>
                                         ) : (
                                             <p className="text-sm text-red-600 dark:text-red-400 font-medium">{result.error || result.data?.message || 'การวิเคราะห์ผิดพลาด'}</p>
