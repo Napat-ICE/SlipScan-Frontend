@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? 'http://localhost:8000'
-    : 'https://slipscan-backend.onrender.com';
+// ใช้ relative path → nginx proxy จะส่งต่อไปที่ backend:8000 อัตโนมัติ
+// ไม่ต้องกังวล CORS เพราะทุก request ผ่าน origin เดียวกัน
+const API_BASE = '';
 
 const api = axios.create({
     baseURL: API_BASE,
