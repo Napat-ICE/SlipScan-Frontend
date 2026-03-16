@@ -65,6 +65,11 @@ docker run -p 80:80 slipscan-frontend
 หรือใช้ docker-compose รวมกับ backend:
 ```bash
 cd ../SlipScan-Backend
+
+# ⚠️ สำคัญ! Build images ใหม่ทุกครั้งที่ pull โค้ดใหม่
+docker-compose build --no-cache frontend
+
+# แล้วค่อยรัน
 docker-compose up
 ```
 
