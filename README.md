@@ -1,16 +1,103 @@
-# React + Vite
+# SlipScan-Frontend 🎨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Web interface สำหรับระบบตรวจสอบสลิปโอนเงินธนาคารไทย (SlipScan) สร้างด้วย **React + Vite + Tailwind CSS**
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| Layer | Technology |
+|-------|-----------|
+| Framework | React 18 |
+| Build Tool | Vite |
+| Styling | Tailwind CSS |
+| Icons | Lucide React |
+| HTTP Client | Axios |
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. Clone Repository
 
-## Expanding the ESLint configuration
+```bash
+git clone https://github.com/Napat-ICE/SlipScan-Frontend.git
+cd SlipScan-Frontend
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Setup Environment (ถ้าจะรันแยก)
+
+```bash
+cp .env.example .env
+```
+
+แก้ไข `.env`:
+```env
+VITE_API_URL=http://localhost:8000/api
+```
+
+### 4. Run Development Server
+
+```bash
+npm run dev
+```
+
+เปิด browser ที่ `http://localhost:5173`
+
+### 5. Build for Production
+
+```bash
+npm run build
+```
+
+## Docker (แนะนำสำหรับ Production)
+
+```bash
+# Build image
+docker build -t slipscan-frontend .
+
+# Run container
+docker run -p 80:80 slipscan-frontend
+```
+
+หรือใช้ docker-compose รวมกับ backend:
+```bash
+cd ../SlipScan-Backend
+docker-compose up
+```
+
+## Project Structure
+
+```
+SlipScan-Frontend/
+├── src/
+│   ├── pages/
+│   │   ├── Dashboard.jsx    — หน้าแดชบอร์ด + รายการล่าสุด
+│   │   ├── Slips.jsx        — หน้ารายการสลิปทั้งหมด
+│   │   └── Upload.jsx       — หน้าอัปโหลดสลิป
+│   ├── components/          — Reusable components
+│   ├── services/
+│   │   └── api.js           — Axios config
+│   ├── contexts/
+│   │   └── ThemeContext.jsx — Dark/Light mode
+│   └── App.jsx
+├── public/
+├── index.html
+├── nginx.conf              — Nginx config (Docker)
+├── Dockerfile
+└── vite.config.js
+```
+
+## Related Services
+
+- [SlipScan-Backend](https://github.com/Napat-ICE/SlipScan-Backend) — REST API
+- [SlipScan-OCR](https://github.com/Napat-ICE/SlipScan-OCR) — OCR microservice
+
+## สิ่งที่ต้องรู้ก่อนใช้งาน
+
+1. **ต้องรัน Backend ก่อน** — Frontend นี้ต้องการ API จาก SlipScan-Backend
+2. **Environment** — ถ้ารันแยกต้องตั้ง `VITE_API_URL` ให้ชี้ไปที่ Backend
+3. **Nginx Config** — มี rate limiting + security headers สำหรับ production
+
