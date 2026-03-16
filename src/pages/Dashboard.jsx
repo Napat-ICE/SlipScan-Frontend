@@ -103,7 +103,7 @@ const Dashboard = () => {
         <div className="space-y-8 animate-fade-in-up pb-8 opacity-100 transition-opacity duration-300">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                 <div>
-                    <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-2">ภาพรวมระบบ (Dashboard)</h1>
+                    <h1 className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">ภาพรวมระบบ (Dashboard)</h1>
                     <p className="text-sm text-gray-500 dark:text-gray-400 ml-1">ข้อมูลสรุปการตรวจสอบสลิปโอนเงินทั้งหมดของคุณ</p>
                 </div>
             </div>
@@ -117,34 +117,34 @@ const Dashboard = () => {
 
             {/* Stat Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="bg-gradient-to-br from-white to-blue-50 dark:from-white/5 dark:to-blue-900/20 rounded-3xl shadow-lg p-6 border border-blue-100 dark:border-blue-800/30 relative overflow-hidden group hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
-                    <div className="absolute -right-8 -top-8 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-full opacity-60 group-hover:scale-125 transition-transform duration-700 ease-out"></div>
+                <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 relative overflow-hidden group hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
+                    <div className="absolute -right-8 -top-8 w-32 h-32 bg-blue-100 dark:bg-blue-900/30 rounded-full opacity-60 group-hover:scale-125 transition-transform duration-700 ease-out"></div>
                     <div className="flex items-center justify-between mb-4 relative z-10">
-                        <div className="h-12 w-12 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 text-white rounded-2xl flex items-center justify-center shadow-lg">
+                        <div className="h-12 w-12 bg-blue-500 dark:bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-lg">
                             <FileText className="h-6 w-6" />
                         </div>
                         <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/40 px-3 py-1.5 rounded-full border border-blue-200 dark:border-blue-700 shadow-sm">ใบเสร็จปกติ</span>
                     </div>
                     <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 relative z-10 mb-2">ยอดสลิปทั้งหมด (ใบ)</h3>
-                    <p className="text-4xl font-black text-gray-900 dark:text-white relative z-10">{stats.total_slips.toLocaleString('th-TH')}</p>
+                    <p className="text-3xl font-semibold text-gray-900 dark:text-white relative z-10">{stats.total_slips.toLocaleString('th-TH')}</p>
                 </div>
 
-                <div className="bg-gradient-to-br from-white to-green-50 dark:from-white/5 dark:to-green-900/20 rounded-3xl shadow-lg p-6 border border-green-100 dark:border-green-800/30 relative overflow-hidden group hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
-                    <div className="absolute -right-8 -top-8 w-32 h-32 bg-gradient-to-br from-green-400/20 to-green-600/20 rounded-full opacity-60 group-hover:scale-125 transition-transform duration-700 ease-out"></div>
+                <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 relative overflow-hidden group hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
+                    <div className="absolute -right-8 -top-8 w-32 h-32 bg-green-100 dark:bg-green-900/30 rounded-full opacity-60 group-hover:scale-125 transition-transform duration-700 ease-out"></div>
                     <div className="flex items-center justify-between mb-4 relative z-10">
-                        <div className="h-12 w-12 bg-gradient-to-br from-green-500 to-green-600 dark:from-green-400 dark:to-green-500 text-white rounded-2xl flex items-center justify-center shadow-lg">
+                        <div className="h-12 w-12 bg-green-500 dark:bg-green-600 text-white rounded-2xl flex items-center justify-center shadow-lg">
                             <Wallet className="h-6 w-6" />
                         </div>
                         <span className="text-xs font-semibold text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/40 px-3 py-1.5 rounded-full border border-green-200 dark:border-green-700 shadow-sm">รวมรายรับ</span>
                     </div>
                     <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 relative z-10 mb-2">ยอดเงินรวม (บาท)</h3>
-                    <p className="text-4xl font-black bg-gradient-to-r from-green-600 to-green-700 dark:from-green-400 dark:to-green-500 bg-clip-text text-transparent relative z-10">฿{formatMoney(stats.total_amount)}</p>
+                    <p className="text-3xl font-semibold text-green-600 dark:text-green-400 relative z-10">฿{formatMoney(stats.total_amount)}</p>
                 </div>
 
-                <div className="bg-gradient-to-br from-white to-red-50 dark:from-white/5 dark:to-red-900/20 rounded-3xl shadow-lg p-6 border border-red-100 dark:border-red-800/30 relative overflow-hidden group hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
-                    <div className="absolute -right-8 -top-8 w-32 h-32 bg-gradient-to-br from-red-400/20 to-red-600/20 rounded-full opacity-60 group-hover:scale-125 transition-transform duration-700 ease-out"></div>
+                <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 relative overflow-hidden group hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
+                    <div className="absolute -right-8 -top-8 w-32 h-32 bg-red-100 dark:bg-red-900/30 rounded-full opacity-60 group-hover:scale-125 transition-transform duration-700 ease-out"></div>
                     <div className="flex items-center justify-between mb-4 relative z-10">
-                        <div className="h-12 w-12 bg-gradient-to-br from-red-500 to-red-600 dark:from-red-400 dark:to-red-500 text-white rounded-2xl flex items-center justify-center shadow-lg">
+                        <div className="h-12 w-12 bg-red-500 dark:bg-red-600 text-white rounded-2xl flex items-center justify-center shadow-lg">
                             <AlertTriangle className="h-6 w-6" />
                         </div>
                         {stats.fake_count > 0 && (
@@ -156,31 +156,31 @@ const Dashboard = () => {
                         <span className="text-xs font-semibold text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900/40 px-3 py-1.5 rounded-full border border-red-200 dark:border-red-700 shadow-sm">ตรวจสอบพบ</span>
                     </div>
                     <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 relative z-10 mb-2">สลิปปลอม (ใบ)</h3>
-                    <p className="text-4xl font-black bg-gradient-to-r from-red-600 to-red-700 dark:from-red-400 dark:to-red-500 bg-clip-text text-transparent relative z-10">{stats.fake_count.toLocaleString('th-TH')}</p>
+                    <p className="text-3xl font-semibold text-red-600 dark:text-red-400 relative z-10">{stats.fake_count.toLocaleString('th-TH')}</p>
                 </div>
 
-                <div className="bg-gradient-to-br from-white to-yellow-50 dark:from-white/5 dark:to-yellow-900/20 rounded-3xl shadow-lg p-6 border border-yellow-100 dark:border-yellow-800/30 relative overflow-hidden group hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
-                    <div className="absolute -right-8 -top-8 w-32 h-32 bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-full opacity-60 group-hover:scale-125 transition-transform duration-700 ease-out"></div>
+                <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 relative overflow-hidden group hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
+                    <div className="absolute -right-8 -top-8 w-32 h-32 bg-yellow-100 dark:bg-yellow-900/30 rounded-full opacity-60 group-hover:scale-125 transition-transform duration-700 ease-out"></div>
                     <div className="flex items-center justify-between mb-4 relative z-10">
-                        <div className="h-12 w-12 bg-gradient-to-br from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-500 text-white rounded-2xl flex items-center justify-center shadow-lg">
+                        <div className="h-12 w-12 bg-yellow-500 dark:bg-yellow-600 text-white rounded-2xl flex items-center justify-center shadow-lg">
                             <FileText className="h-6 w-6" />
                         </div>
                         <span className="text-xs font-semibold text-yellow-600 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-900/40 px-3 py-1.5 rounded-full border border-yellow-200 dark:border-yellow-700 shadow-sm">ประวัติซ้ำซ้อน</span>
                     </div>
                     <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 relative z-10 mb-2">สลิปซ้ำ (ใบ)</h3>
-                    <p className="text-4xl font-black bg-gradient-to-r from-yellow-600 to-yellow-700 dark:from-yellow-400 dark:to-yellow-500 bg-clip-text text-transparent relative z-10">{stats.dup_count.toLocaleString('th-TH')}</p>
+                    <p className="text-3xl font-semibold text-yellow-600 dark:text-yellow-400 relative z-10">{stats.dup_count.toLocaleString('th-TH')}</p>
                 </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* ── Trend Chart ── */}
-                <div className="lg:col-span-2 bg-gradient-to-br from-white to-blue-50 dark:from-white/5 dark:to-blue-900/10 rounded-3xl shadow-lg border border-blue-100 dark:border-blue-800/30 p-8 flex flex-col hover:shadow-2xl transition-all duration-500">
+                <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 p-8 flex flex-col hover:shadow-2xl transition-all duration-500">
                     <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-8 gap-4">
                         <div className="flex items-center">
-                            <div className="h-10 w-10 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 rounded-xl flex items-center justify-center text-white shadow-lg mr-4">
+                            <div className="h-10 w-10 bg-blue-500 dark:bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg mr-4">
                                 <TrendingUp className="h-5 w-5" />
                             </div>
-                            <h2 className="text-xl font-bold text-gray-900 dark:text-white">แนวโน้มยอดรับเงิน</h2>
+                            <h2 className="text-lg font-medium text-gray-900 dark:text-white">แนวโน้มยอดรับเงิน</h2>
                         </div>
                         <div className="flex bg-gray-100 dark:bg-gray-700/50 p-1.5 rounded-xl shadow-inner">
                             <button onClick={() => handleChartModeChange('daily')} className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all ${chartMode === 'daily' ? 'bg-white dark:bg-gray-600 shadow-md text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'}`}>รายวัน</button>
@@ -233,12 +233,12 @@ const Dashboard = () => {
                 </div>
 
                 {/* ── Bank Ranking ── */}
-                <div className="bg-gradient-to-br from-white to-purple-50 dark:from-white/5 dark:to-purple-900/10 rounded-3xl shadow-lg border border-purple-100 dark:border-purple-800/30 p-8 flex flex-col hover:shadow-2xl transition-all duration-500">
+                <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 p-8 flex flex-col hover:shadow-2xl transition-all duration-500">
                     <div className="flex items-center mb-8">
-                        <div className="h-10 w-10 bg-gradient-to-br from-purple-500 to-purple-600 dark:from-purple-400 dark:to-purple-500 rounded-xl flex items-center justify-center text-white shadow-lg mr-4">
+                        <div className="h-10 w-10 bg-purple-500 dark:bg-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg mr-4">
                             <BarChart3 className="h-5 w-5" />
                         </div>
-                        <h2 className="text-xl font-bold text-gray-900 dark:text-white">สัดส่วนธนาคาร</h2>
+                        <h2 className="text-lg font-medium text-gray-900 dark:text-white">สัดส่วนธนาคาร</h2>
                     </div>
 
                     <div className="w-full h-[220px]">
@@ -275,7 +275,7 @@ const Dashboard = () => {
                                     <span className="text-gray-700 dark:text-gray-300 font-semibold truncate max-w-[120px]" title={bank.bank_name}>{bank.bank_name || 'ไม่ระบุ'}</span>
                                 </div>
                                 <div className="text-right">
-                                    <span className="font-bold text-gray-900 dark:text-white">฿{formatMoney(bank.total_amount)}</span>
+                                    <span className="font-medium text-gray-900 dark:text-white">฿{formatMoney(bank.total_amount)}</span>
                                     <span className="text-xs text-gray-400 dark:text-gray-500 ml-2">({bank.slip_count} ใบ)</span>
                                 </div>
                             </div>
@@ -285,13 +285,13 @@ const Dashboard = () => {
             </div>
 
             {/* ── Recent Transactions ── */}
-            <div className="bg-gradient-to-br from-white to-gray-50 dark:from-white/5 dark:to-gray-900/10 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700/30 overflow-hidden hover:shadow-2xl transition-all duration-500">
-                <div className="px-8 py-6 border-b border-gray-100 dark:border-gray-700/50 flex justify-between items-center bg-gradient-to-r from-gray-50 to-white dark:from-gray-800/20 dark:to-white/5">
+            <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div className="px-8 py-6 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-800">
                     <div className="flex items-center">
-                        <div className="h-10 w-10 bg-gradient-to-br from-gray-500 to-gray-600 dark:from-gray-400 dark:to-gray-500 rounded-xl flex items-center justify-center text-white shadow-lg mr-4">
+                        <div className="h-10 w-10 bg-gray-500 dark:bg-gray-600 rounded-xl flex items-center justify-center text-white shadow-lg mr-4">
                             <Clock className="h-5 w-5" />
                         </div>
-                        <h2 className="text-xl font-bold text-gray-900 dark:text-white">รายการสลิปล่าสุด</h2>
+                        <h2 className="text-lg font-medium text-gray-900 dark:text-white">รายการสลิปล่าสุด</h2>
                     </div>
                     <button onClick={() => navigate('/slips')} className="text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline transition-colors duration-300">
                         ดูทั้งหมด &rarr;
@@ -300,14 +300,14 @@ const Dashboard = () => {
 
                 <div className="overflow-x-auto">
                     <table className="w-full text-sm text-left">
-                        <thead className="text-xs text-gray-500 dark:text-gray-400 uppercase bg-gradient-to-r from-gray-50 to-white dark:from-gray-800/20 dark:to-white/5 border-b border-gray-100 dark:border-gray-700/50">
+                        <thead className="text-xs text-gray-500 dark:text-gray-400 uppercase bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
                             <tr>
-                                <th className="px-6 py-4 font-bold tracking-wider">#ID</th>
-                                <th className="px-6 py-4 font-bold tracking-wider">วันเวลาที่ทำรายการ</th>
-                                <th className="px-6 py-4 font-bold tracking-wider">ผู้โอน</th>
-                                <th className="px-6 py-4 font-bold tracking-wider">ธนาคาร</th>
-                                <th className="px-6 py-4 font-bold tracking-wider text-right">จำนวนเงิน</th>
-                                <th className="px-6 py-4 font-bold tracking-wider text-center">สถานะการตรวจสอบ</th>
+                                <th className="px-6 py-4 font-medium tracking-wider">#ID</th>
+                                <th className="px-6 py-4 font-medium tracking-wider">วันเวลาที่ทำรายการ</th>
+                                <th className="px-6 py-4 font-medium tracking-wider">ผู้โอน</th>
+                                <th className="px-6 py-4 font-medium tracking-wider">ธนาคาร</th>
+                                <th className="px-6 py-4 font-medium tracking-wider text-right">จำนวนเงิน</th>
+                                <th className="px-6 py-4 font-medium tracking-wider text-center">สถานะการตรวจสอบ</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-50 dark:divide-gray-700/50">

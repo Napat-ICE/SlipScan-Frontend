@@ -5,6 +5,43 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    // Base dark class
+    'dark',
+    // Dark mode background colors
+    'dark:bg-gray-900',
+    'dark:bg-gray-800',
+    'dark:bg-gray-700',
+    'dark:bg-gray-600',
+    'dark:bg-blue-900/30',
+    'dark:bg-green-900/30',
+    'dark:bg-red-900/30',
+    'dark:bg-yellow-900/30',
+    'dark:bg-blue-900/40',
+    'dark:bg-green-900/40',
+    'dark:bg-red-900/40',
+    'dark:bg-yellow-900/40',
+    // Dark mode text colors
+    'dark:text-white',
+    'dark:text-gray-100',
+    'dark:text-gray-200',
+    'dark:text-gray-300',
+    'dark:text-gray-400',
+    'dark:text-blue-400',
+    'dark:text-green-400',
+    'dark:text-red-400',
+    'dark:text-yellow-400',
+    // Dark mode borders
+    'dark:border-gray-700',
+    'dark:border-gray-600',
+    'dark:border-blue-700',
+    'dark:border-green-700',
+    'dark:border-red-700',
+    'dark:border-yellow-700',
+    // Dark mode hover states
+    'dark:hover:bg-gray-700',
+    'dark:hover:text-gray-300',
+  ],
   theme: {
     extend: {
       fontFamily: {
